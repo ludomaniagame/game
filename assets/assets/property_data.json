@@ -1,0 +1,446 @@
+{
+  "categories": {
+    "real_estate": {
+      "title": "Недвижимость",
+      "items": [
+        {
+          "id": "room_rent",
+          "name": "Место в комнате",
+          "emoji": "🚪",
+          "price": 1500,
+          "params": {
+            "comfort": 10,
+            "prestige": 2,
+            "income_per_day": 0,
+            "risk_modifier": 1.05
+          }
+        },
+        {
+          "id": "studio_flat",
+          "name": "Студия",
+          "emoji": "🏠",
+          "price": 25000,
+          "params": {
+            "comfort": 25,
+            "prestige": 8,
+            "income_per_day": 5,
+            "risk_modifier": 1.02
+          }
+        },
+        {
+          "id": "city_apartment",
+          "name": "Городская квартира",
+          "emoji": "🏢",
+          "price": 90000,
+          "params": {
+            "comfort": 45,
+            "prestige": 20,
+            "income_per_day": 15,
+            "risk_modifier": 0.98
+          }
+        },
+        {
+          "id": "suburban_house",
+          "name": "Дом в пригороде",
+          "emoji": "🏡",
+          "price": 220000,
+          "params": {
+            "comfort": 65,
+            "prestige": 35,
+            "income_per_day": 30,
+            "risk_modifier": 0.95
+          }
+        },
+        {
+          "id": "commercial_shop",
+          "name": "Коммерческое помещение",
+          "emoji": "🏪",
+          "price": 450000,
+          "params": {
+            "comfort": 40,
+            "prestige": 50,
+            "income_per_day": 120,
+            "risk_modifier": 0.9
+          }
+        },
+        {
+          "id": "penthouse",
+          "name": "Пентхаус",
+          "emoji": "🏙️",
+          "price": 1200000,
+          "params": {
+            "comfort": 90,
+            "prestige": 85,
+            "income_per_day": 120,
+            "risk_modifier": 0.85
+          }
+        },
+        {
+          "id": "luxury_villa",
+          "name": "Роскошная вилла",
+          "emoji": "🏰",
+          "price": 5000000,
+          "params": {
+            "comfort": 100,
+            "prestige": 100,
+            "income_per_day": 300,
+            "risk_modifier": 0.75
+          }
+        }
+      ]
+    },
+    "vehicles": {
+      "title": "Транспорт",
+      "items": [
+        {
+          "id": "old_sedan",
+          "name": "Старый седан",
+          "emoji": "🚗",
+          "price": 3500,
+          "params": {
+            "speed": 90,
+            "status": 5,
+            "prestige": 3,
+            "luck_bonus": 0
+          }
+        },
+        {
+          "id": "budget_car",
+          "name": "Бюджетный автомобиль",
+          "emoji": "🚙",
+          "price": 18000,
+          "params": {
+            "speed": 120,
+            "status": 12,
+            "prestige": 10,
+            "luck_bonus": 1
+          }
+        },
+        {
+          "id": "business_sedan",
+          "name": "Бизнес-седан",
+          "emoji": "🚘",
+          "price": 70000,
+          "params": {
+            "speed": 160,
+            "status": 45,
+            "prestige": 35,
+            "luck_bonus": 3
+          }
+        },
+        {
+          "id": "armored_suv",
+          "name": "Бронированный внедорожник",
+          "emoji": "🚙",
+          "price": 160000,
+          "params": {
+            "speed": 140,
+            "status": 70,
+            "prestige": 60,
+            "luck_bonus": 4
+          }
+        },
+        {
+          "id": "sport_car",
+          "name": "Спорткар",
+          "emoji": "🏎️",
+          "price": 230000,
+          "params": {
+            "speed": 280,
+            "status": 85,
+            "prestige": 75,
+            "luck_bonus": 6
+          }
+        },
+        {
+          "id": "luxury_supercar",
+          "name": "Суперкар класса люкс",
+          "emoji": "🏎️",
+          "price": 850000,
+          "params": {
+            "speed": 340,
+            "status": 100,
+            "prestige": 100,
+            "luck_bonus": 10
+          }
+        },
+        {
+          "id": "private_yacht",
+          "name": "Частная яхта",
+          "emoji": "🛥️",
+          "price": 3000000,
+          "params": {
+            "speed": 80,
+            "status": 120,
+            "prestige": 130,
+            "luck_bonus": 12
+          }
+        }
+      ]
+    },
+    "jewelry": {
+      "title": "Драгоценности",
+      "items": [
+        {
+          "id": "silver_ring",
+          "name": "Серебряное кольцо",
+          "emoji": "💍",
+          "price": 400,
+          "params": {
+            "rarity": 5,
+            "prestige": 3,
+            "resale_value_percent": 70,
+            "luck_bonus": 1
+          }
+        },
+        {
+          "id": "gold_chain",
+          "name": "Золотая цепь",
+          "emoji": "📿",
+          "price": 3200,
+          "params": {
+            "rarity": 15,
+            "prestige": 12,
+            "resale_value_percent": 80,
+            "luck_bonus": 2
+          }
+        },
+        {
+          "id": "diamond_small",
+          "name": "Бриллиант (малый)",
+          "emoji": "💎",
+          "price": 25000,
+          "params": {
+            "rarity": 40,
+            "prestige": 35,
+            "resale_value_percent": 85,
+            "luck_bonus": 4
+          }
+        },
+        {
+          "id": "diamond_large",
+          "name": "Бриллиант (крупный)",
+          "emoji": "💎",
+          "price": 120000,
+          "params": {
+            "rarity": 75,
+            "prestige": 80,
+            "resale_value_percent": 90,
+            "luck_bonus": 8
+          }
+        },
+        {
+          "id": "royal_diamond",
+          "name": "Королевский бриллиант",
+          "emoji": "💎",
+          "price": 750000,
+          "params": {
+            "rarity": 100,
+            "prestige": 120,
+            "resale_value_percent": 95,
+            "luck_bonus": 15
+          }
+        }
+      ]
+    },
+    "luxury_items": {
+      "title": "Роскошь и статус",
+      "items": [
+        {
+          "id": "brand_watch",
+          "name": "Брендовые часы",
+          "emoji": "⌚",
+          "price": 9000,
+          "params": {
+            "prestige": 20,
+            "rarity": 15,
+            "luck_bonus": 2,
+            "resale_value_percent": 75
+          }
+        },
+        {
+          "id": "designer_bag",
+          "name": "Дизайнерская сумка",
+          "emoji": "👜",
+          "price": 18000,
+          "params": {
+            "prestige": 35,
+            "rarity": 25,
+            "luck_bonus": 3,
+            "resale_value_percent": 70
+          }
+        },
+        {
+          "id": "rare_painting",
+          "name": "Редкая картина",
+          "emoji": "🖼️",
+          "price": 95000,
+          "params": {
+            "prestige": 60,
+            "rarity": 70,
+            "luck_bonus": 5,
+            "resale_value_percent": 85
+          }
+        },
+        {
+          "id": "luxury_safe",
+          "name": "Элитный сейф",
+          "emoji": "🧰",
+          "price": 140000,
+          "params": {
+            "prestige": 40,
+            "rarity": 40,
+            "luck_bonus": 4,
+            "resale_value_percent": 65
+          }
+        },
+        {
+          "id": "private_jet_share",
+          "name": "Доля в частном самолёте",
+          "emoji": "✈️",
+          "price": 600000,
+          "params": {
+            "prestige": 95,
+            "rarity": 90,
+            "luck_bonus": 12,
+            "resale_value_percent": 85
+          }
+        }
+      ]
+    },
+    "casino_assets": {
+      "title": "Азартные активы",
+      "items": [
+        {
+          "id": "slot_machine",
+          "name": "Игровой автомат",
+          "emoji": "🎰",
+          "price": 45000,
+          "params": {
+            "income_per_day": 80,
+            "prestige": 25,
+            "risk_modifier": 1.1
+          }
+        },
+        {
+          "id": "casino_share",
+          "name": "Доля в казино",
+          "emoji": "🏦",
+          "price": 850000,
+          "params": {
+            "income_per_day": 600,
+            "prestige": 110,
+            "risk_modifier": 0.85
+          }
+        },
+        {
+          "id": "vip_poker_table",
+          "name": "VIP покерный стол",
+          "emoji": "🃏",
+          "price": 120000,
+          "params": {
+            "income_per_day": 150,
+            "prestige": 55,
+            "risk_modifier": 1.05
+          }
+        }
+      ]
+    },
+    "business_assets": {
+      "title": "Бизнес и коммерческая недвижимость",
+      "items": [
+        {
+          "id": "coffee_shop",
+          "name": "Кофейня",
+          "emoji": "☕",
+          "price": 350000,
+          "params": {
+            "income_per_day": 1280,
+            "prestige": 20,
+            "popularity": 35,
+            "maintenance_per_day": 120,
+            "risk_modifier": 0.97
+          }
+        },
+        {
+          "id": "night_club",
+          "name": "Ночной клуб",
+          "emoji": "🍸",
+          "price": 4500000,
+          "params": {
+            "income_per_day": 4400,
+            "prestige": 65,
+            "popularity": 80,
+            "maintenance_per_day": 480,
+            "risk_modifier": 1.08
+          }
+        },
+        {
+          "id": "boutique_hotel",
+          "name": "Бутик-отель",
+          "emoji": "🏨",
+          "price": 18000000,
+          "params": {
+            "income_per_day": 10400,
+            "prestige": 90,
+            "popularity": 70,
+            "maintenance_per_day": 1120,
+            "risk_modifier": 0.92
+          }
+        },
+        {
+          "id": "mini_market",
+          "name": "Минимаркет",
+          "emoji": "🏪",
+          "price": 950000,
+          "params": {
+            "income_per_day": 1680,
+            "prestige": 30,
+            "popularity": 45,
+            "maintenance_per_day": 160,
+            "risk_modifier": 0.95
+          }
+        },
+        {
+          "id": "underground_casino",
+          "name": "Подпольное казино",
+          "emoji": "🎰",
+          "price": 7200000,
+          "params": {
+            "income_per_day": 7200,
+            "prestige": 85,
+            "popularity": 90,
+            "maintenance_per_day": 640,
+            "risk_modifier": 1.15
+          }
+        },
+        {
+          "id": "car_dealership",
+          "name": "Автосалон",
+          "emoji": "🚗",
+          "price": 9800000,
+          "params": {
+            "income_per_day": 8400,
+            "prestige": 70,
+            "popularity": 60,
+            "maintenance_per_day": 720,
+            "risk_modifier": 0.9
+          }
+        },
+        {
+          "id": "business_center",
+          "name": "Бизнес-центр",
+          "emoji": "🏢",
+          "price": 55000000,
+          "params": {
+            "income_per_day": 32800,
+            "prestige": 120,
+            "popularity": 75,
+            "maintenance_per_day": 2800,
+            "risk_modifier": 0.85
+          }
+        }
+      ]
+    }
+  }
+}
