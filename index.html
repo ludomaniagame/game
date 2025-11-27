@@ -47,6 +47,17 @@
       position: fixed;
       width: 100%;
       height: 100%;
+      overscroll-behavior: none;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-y;
+    }
+    
+    html {
+      overscroll-behavior: none;
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+      height: 100%;
     }
     
     /* Предупреждение о ландшафтной ориентации */
@@ -77,16 +88,48 @@
 </head>
 <body>
   <script>
+    // Запрещаем pull-to-refresh и overscroll
+    document.addEventListener('touchmove', function(e) {
+      // Разрешаем скролл только внутри элементов
+      if (e.target.closest('flt-semantics-scroll-view') || 
+          e.target.closest('[data-scrollable]')) {
+        return;
+      }
+      
+      // Запрещаем overscroll на body
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop === 0) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+    
+    // Запрещаем жест "закрыть приложение" в Telegram
+    document.addEventListener('gesturestart', function(e) {
+      e.preventDefault();
+    });
+    
     // Инициализация Telegram Web App
     if (window.Telegram && window.Telegram.WebApp) {
-      window.Telegram.WebApp.ready();
-      window.Telegram.WebApp.expand();
+      const webApp = window.Telegram.WebApp;
+      
+      webApp.ready();
+      webApp.expand();
+      
+      // Отключаем вертикальные свайпы (закрытие приложения)
+      webApp.setHeaderColor('#0D1117');
+      webApp.setBackgroundColor('#0D1117');
       
       // Включаем кнопку закрытия
-      window.Telegram.WebApp.enableClosingConfirmation();
+      webApp.enableClosingConfirmation();
+      
+      // Отключаем стандартное поведение pull-to-close
+      if (webApp.isVersionAtLeast && webApp.isVersionAtLeast('6.1')) {
+        webApp.disableVerticalSwipes();
+      }
       
       console.log('[Telegram] Web App initialized');
-      console.log('[Telegram] User ID:', window.Telegram.WebApp.initDataUnsafe?.user?.id);
+      console.log('[Telegram] User ID:', webApp.initDataUnsafe?.user?.id);
+      console.log('[Telegram] Version:', webApp.version);
     }
   </script>
   
