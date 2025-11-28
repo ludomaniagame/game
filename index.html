@@ -21,8 +21,13 @@
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="LUDOMANIA - Casino, Crypto, Betting">
   
-  <!-- Viewport для мобильных устройств -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- Viewport для мобильных устройств (фиксированный для iOS) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  
+  <!-- iOS Safari специфичные настройки -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   
   <!-- Telegram Mini Apps support -->
   <meta name="telegram-mini-app" content="yes">
@@ -40,16 +45,10 @@
   <link rel="manifest" href="manifest.json">
   
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      overscroll-behavior: none;
-      -webkit-overflow-scrolling: touch;
-      touch-action: pan-y;
+    * {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      text-size-adjust: 100%;
     }
     
     html {
@@ -58,6 +57,27 @@
       position: fixed;
       width: 100%;
       height: 100%;
+      height: 100vh;
+      height: -webkit-fill-available;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      height: 100vh;
+      height: -webkit-fill-available;
+      overscroll-behavior: none;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-y;
+    }
+    
+    /* Фикс для iOS Safari - запрет автоматического зума */
+    input, select, textarea, button {
+      font-size: 16px !important;
     }
     
     /* Предупреждение о ландшафтной ориентации */
@@ -88,6 +108,34 @@
 </head>
 <body>
   <script>
+    // Фикс масштабирования для iOS
+    (function() {
+      const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      if (iOS) {
+        // Запрещаем двойной тап для зума
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(e) {
+          const now = Date.now();
+          if (now - lastTouchEnd <= 300) {
+            e.preventDefault();
+          }
+          lastTouchEnd = now;
+        }, false);
+        
+        // Фиксируем viewport при изменении ориентации
+        window.addEventListener('orientationchange', function() {
+          const viewport = document.querySelector('meta[name=viewport]');
+          if (viewport) {
+            viewport.setAttribute('content', 
+              'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover');
+          }
+          setTimeout(function() {
+            window.scrollTo(0, 0);
+          }, 100);
+        });
+      }
+    })();
+    
     // Запрещаем pull-to-refresh и overscroll
     document.addEventListener('touchmove', function(e) {
       // Разрешаем скролл только внутри элементов
