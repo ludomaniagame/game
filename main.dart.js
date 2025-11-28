@@ -90578,7 +90578,7 @@ xG(a,b){return this.a7l(a,b)},
 a7l(a,b){var s=0,r=A.O(t.ob),q,p=2,o=[],n=this,m,l,k,j,i,h,g,f
 var $async$xG=A.P(function(c,d){if(c===1){o.push(d)
 s=p}while(true)switch(s){case 0:p=4
-j=A.iC("https://backend-gamma-beige-66.vercel.app/create-invoice")
+j=A.iC("https://backend-gamma-beige-66.vercel.app/api/create-invoice")
 i=t.N
 h=A.am(["Content-Type","application/json"],i,i)
 s=7
